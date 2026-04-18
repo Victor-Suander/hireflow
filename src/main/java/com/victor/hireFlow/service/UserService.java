@@ -1,5 +1,6 @@
 package com.victor.hireFlow.service;
 
+import com.victor.hireFlow.dto.UserResponse;
 import com.victor.hireFlow.entity.User;
 import java.util.List;
 import java.util.Optional;
@@ -19,4 +20,13 @@ public interface UserService {
     void deleteUser(Long id);
 
     boolean emailExists(String email);
+
+    // Métodos para retornar UserResponse (sem senha)
+    UserResponse getUserResponseById(Long id);
+
+    UserResponse getUserResponseByEmail(String email);
+
+    List<UserResponse> getAllUserResponses();
+
+    UserResponse createUserResponse(User user);
 }
