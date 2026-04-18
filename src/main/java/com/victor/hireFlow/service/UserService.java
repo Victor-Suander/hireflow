@@ -20,4 +20,3 @@ public interface UserService {
 
     boolean emailExists(String email);
 }
-
