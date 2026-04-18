@@ -1,5 +1,6 @@
 package com.victor.hireFlow.service;
 
+import com.victor.hireFlow.dto.UserCreateRequest;
 import com.victor.hireFlow.dto.UserResponse;
 import com.victor.hireFlow.entity.User;
 import java.util.List;
@@ -29,4 +30,7 @@ public interface UserService {
     List<UserResponse> getAllUserResponses();
 
     UserResponse createUserResponse(User user);
+
+    // Método para criação com validação
+    UserResponse createUserFromRequest(UserCreateRequest request);
 }

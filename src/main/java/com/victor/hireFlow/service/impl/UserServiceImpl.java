@@ -1,5 +1,6 @@
 package com.victor.hireFlow.service.impl;
 
+import com.victor.hireFlow.dto.UserCreateRequest;
 import com.victor.hireFlow.dto.UserResponse;
 import com.victor.hireFlow.entity.User;
 import com.victor.hireFlow.repository.UserRepository;
@@ -101,5 +102,16 @@ public class UserServiceImpl implements UserService {
                 user.getEmail(),
                 user.getCreatedAt()
         );
+    }
+
+    // Método para criação com validação usando UserCreateRequest
+    @Override
+    public UserResponse createUserFromRequest(UserCreateRequest request) {
+        User user = new User();
+        user.setName(request.getName());
+        user.setEmail(request.getEmail());
+        user.setPassword(request.getPassword());
+
+        return createUserResponse(user);
     }
 }
